@@ -533,8 +533,75 @@ body {
       }
     }
   }
+  .signup_container {
+    margin-bottom: 40px;
+  }
   .login_container,
   .signup_container {
+    .signup_methods {
+      margin-top: 40px;
+      .common_signupBtn {
+        cursor: pointer;
+        height: 42px;
+        border-radius: 25px;
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .google-btn {
+        background-color: $google-blue;
+        .btn-text {
+          color: $white;
+        }
+      }
+      .linkedin-btn {
+        margin-top: 20px !important;
+        background-color: #fbfbfb;
+      }
+      .google-icon-wrapper {
+        position: absolute;
+        margin-top: 1px;
+        margin-left: 1px;
+        width: 40px;
+        height: 40px;
+        border-radius: 25px;
+        background-color: $white;
+      }
+      .google-icon {
+        position: absolute;
+        margin-top: 11px;
+        margin-left: 11px;
+        width: 18px;
+        height: 18px;
+      }
+      .btn-text {
+        text-align: center;
+        padding-top: 8px;
+        font-size: 16px;
+        letter-spacing: 0.2px;
+      }
+    }
+    .password_group {
+      border-radius: 5px;
+      .password_input {
+        border-right: none;
+      }
+      .eye_btn {
+        border: 1px solid #d5d2d2 !important;
+        border-left: none !important;
+        border-top-right-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+      }
+    }
+    .terms_services {
+      font-size: 14px;
+      span {
+        a {
+          color: $light_green;
+        }
+      }
+    }
     .class_Link {
       text-decoration: none;
     }
@@ -554,9 +621,9 @@ body {
         margin-bottom: 4px;
       }
     }
-    form {
-      margin-top: 50px;
-    }
+    // form {
+    //   margin-top: 50px;
+    // }
     .buttons_div {
       display: flex;
       flex-direction: column;
@@ -565,11 +632,11 @@ body {
       display: flex;
       align-items: center;
       text-align: center;
-      margin: 20px 0;
+      margin: 36px 0;
 
       .line {
         flex: 1;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #a19f9f;
 
         .or {
           margin: 0 10px;
@@ -577,6 +644,16 @@ body {
           color: #999;
           text-transform: uppercase;
         }
+      }
+    }
+    .commonBtn {
+      width: 100% !important;
+      border-radius: 20px !important;
+    }
+    .login_link {
+      font-size: 15px;
+      .class_Link {
+        color: $light_green;
       }
     }
   }

@@ -494,6 +494,85 @@ body .footer .footer-bottom ul li .footer-links {
 body .footer .footer-bottom ul li .footer-links:hover {
   opacity: 0.7;
 }
+body .signup_container {
+  margin-bottom: 40px;
+}
+body .login_container .signup_methods,
+body .signup_container .signup_methods {
+  margin-top: 40px;
+}
+body .login_container .signup_methods .common_signupBtn,
+body .signup_container .signup_methods .common_signupBtn {
+  cursor: pointer;
+  height: 42px;
+  border-radius: 25px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+}
+body .login_container .signup_methods .common_signupBtn:hover,
+body .signup_container .signup_methods .common_signupBtn:hover {
+  opacity: 0.7;
+}
+body .login_container .signup_methods .google-btn,
+body .signup_container .signup_methods .google-btn {
+  background-color: #4285f4;
+}
+body .login_container .signup_methods .google-btn .btn-text,
+body .signup_container .signup_methods .google-btn .btn-text {
+  color: #ffffff;
+}
+body .login_container .signup_methods .linkedin-btn,
+body .signup_container .signup_methods .linkedin-btn {
+  margin-top: 20px !important;
+  background-color: #fbfbfb;
+}
+body .login_container .signup_methods .google-icon-wrapper,
+body .signup_container .signup_methods .google-icon-wrapper {
+  position: absolute;
+  margin-top: 1px;
+  margin-left: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #ffffff;
+}
+body .login_container .signup_methods .google-icon,
+body .signup_container .signup_methods .google-icon {
+  position: absolute;
+  margin-top: 11px;
+  margin-left: 11px;
+  width: 18px;
+  height: 18px;
+}
+body .login_container .signup_methods .btn-text,
+body .signup_container .signup_methods .btn-text {
+  text-align: center;
+  padding-top: 8px;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+body .login_container .password_group,
+body .signup_container .password_group {
+  border-radius: 5px;
+}
+body .login_container .password_group .password_input,
+body .signup_container .password_group .password_input {
+  border-right: none;
+}
+body .login_container .password_group .eye_btn,
+body .signup_container .password_group .eye_btn {
+  border: 1px solid #d5d2d2 !important;
+  border-left: none !important;
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+}
+body .login_container .terms_services,
+body .signup_container .terms_services {
+  font-size: 14px;
+}
+body .login_container .terms_services span a,
+body .signup_container .terms_services span a {
+  color: #00B074;
+}
 body .login_container .class_Link,
 body .signup_container .class_Link {
   text-decoration: none;
@@ -519,10 +598,6 @@ body .login_container .go_backBtn img,
 body .signup_container .go_backBtn img {
   margin-bottom: 4px;
 }
-body .login_container form,
-body .signup_container form {
-  margin-top: 50px;
-}
 body .login_container .buttons_div,
 body .signup_container .buttons_div {
   display: flex;
@@ -533,12 +608,12 @@ body .signup_container .separator {
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 20px 0;
+  margin: 36px 0;
 }
 body .login_container .separator .line,
 body .signup_container .separator .line {
   flex: 1;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #a19f9f;
 }
 body .login_container .separator .line .or,
 body .signup_container .separator .line .or {
@@ -546,6 +621,19 @@ body .signup_container .separator .line .or {
   font-weight: bold;
   color: #999;
   text-transform: uppercase;
+}
+body .login_container .commonBtn,
+body .signup_container .commonBtn {
+  width: 100% !important;
+  border-radius: 20px !important;
+}
+body .login_container .login_link,
+body .signup_container .login_link {
+  font-size: 15px;
+}
+body .login_container .login_link .class_Link,
+body .signup_container .login_link .class_Link {
+  color: #00B074;
 }
 @media (min-width: 768px) {
   body .gradient-form {
