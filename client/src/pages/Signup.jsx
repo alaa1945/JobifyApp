@@ -73,7 +73,7 @@ function Signup() {
               Back
             </Link>
           </button>
-          <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="row d-flex justify-content-center align-items-center mt-md-3 h-100">
             <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
               <div class="card rounded-3 text-black">
                 <div class="row g-0">

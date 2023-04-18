@@ -121,7 +121,7 @@ Payment.createCollection();
 //Defines an endpoint at "/api"
 app.get("/api", (req, res) => {
   console.log("logged");
-  //res.json({ message: "Hello from server!" });
+  res.json({ message: "Hello from server!" });
 });
 
 
@@ -151,7 +151,8 @@ app.post("/api/freelancer", (req, res) => {
   // res.send(freelancer);
 });
 
-app.post("/signup/freelancer", (req, res) => {
+app.post("/signup", (req, res) => {
+  
   const name = req.body.name;
   const email = req.body.email;
   const password = req.body.password;
@@ -177,7 +178,7 @@ app.post("/signup/freelancer", (req, res) => {
     });
 });
 
-app.get("/login",(req,res)=>{
+app.post("/login",(req,res)=>{
   console.log("login page");
 });
 

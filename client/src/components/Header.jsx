@@ -70,7 +70,7 @@ function Header() {
                       </Link>
                     </button>
                     <button className="list-btn-link login-info-btn signup-btn commonBtn">
-                      <Link className="btnLink list-link" to="signup">
+                      <Link className="btnLink list-link" to="newUser">
                         Sign Up
                       </Link>
                     </button>

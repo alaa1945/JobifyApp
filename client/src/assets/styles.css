@@ -497,6 +497,17 @@ body .footer .footer-bottom ul li .footer-links:hover {
 body .signup_container {
   margin-bottom: 40px;
 }
+body .go_backBtn {
+  background-color: transparent;
+  border: none;
+}
+body .go_backBtn .class_Link {
+  text-decoration: none;
+  color: #00B074;
+}
+body .go_backBtn img {
+  margin-bottom: 4px;
+}
 body .login_container .signup_methods,
 body .signup_container .signup_methods {
   margin-top: 40px;
@@ -585,19 +596,6 @@ body .login_container .login-logo,
 body .signup_container .login-logo {
   width: 185px;
 }
-body .login_container .go_backBtn,
-body .signup_container .go_backBtn {
-  background-color: transparent;
-  border: none;
-}
-body .login_container .go_backBtn .class_Link,
-body .signup_container .go_backBtn .class_Link {
-  color: #00B074;
-}
-body .login_container .go_backBtn img,
-body .signup_container .go_backBtn img {
-  margin-bottom: 4px;
-}
 body .login_container .buttons_div,
 body .signup_container .buttons_div {
   display: flex;
@@ -634,6 +632,61 @@ body .signup_container .login_link {
 body .login_container .login_link .class_Link,
 body .signup_container .login_link .class_Link {
   color: #00B074;
+}
+body .newUser_container .account-type {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  width: 100%;
+}
+body .newUser_container .account-type .account-type-option {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 30px 20px;
+}
+body .newUser_container .account-type .account-type-option div {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+body .newUser_container .account-type .account-type-option label {
+  font-size: 18px;
+  color: #2B3940;
+  padding-top: 25px;
+  font-weight: 500;
+}
+body .newUser_container .account-type span {
+  font-size: 20px;
+}
+body .newUser_container .account-type input[type=radio]:after {
+  width: 19px;
+  height: 19px;
+  border-radius: 15px;
+  top: -1px;
+  left: -1px;
+  position: relative;
+  background-color: #ebeceb;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid #00B074;
+}
+body .newUser_container .account-type input[type=radio]:checked:after {
+  width: 19px;
+  height: 19px;
+  border-radius: 15px;
+  top: -1px;
+  left: -1px;
+  position: relative;
+  background-color: #00B074;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+body .newUser_container .commonBtn {
+  width: 100%;
+  border-radius: 34px !important;
 }
 @media (min-width: 768px) {
   body .gradient-form {

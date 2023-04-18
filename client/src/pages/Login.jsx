@@ -6,6 +6,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const [result, setResult] = useState({});
   const [showPassword, setShowPassword] = useState(false);
 
   const validate = () => {
@@ -22,17 +23,31 @@ function Login() {
     }
     return errors;
   };
-  const handleSubmit = (event) => {
-    // handle login logic
+  
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const errors = validate();
 
     if (Object.keys(errors).length === 0) {
-      // submit form data to server
+      try {
+        const response = await fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: username,
+            password: password,
+          }),
+        });
+        const data = await response.json();
+      return data;
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       setErrors(errors);
     }
-
   };
   return (
     <div class="login_container">
@@ -47,7 +62,7 @@ function Login() {
               Back
             </Link>
           </button>
-          <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="row d-flex justify-content-center align-items-center mt-md-3 h-100">
             <div class="col-xl-10">
               <div class="card rounded-3 text-black">
                 <div class="row g-0">
@@ -88,7 +103,7 @@ function Login() {
                         <div class="or">or</div>
                         <div class="line"></div>
                       </div>
-                      <Form onSubmit={handleSubmit} className="mt-4">
+                      <Form className="mt-4">
                         <Form.Group controlId="username" className="mb-4">
                           <Form.Label>Username</Form.Label>
                           <Form.Control
@@ -99,7 +114,6 @@ function Login() {
                               setUsername(event.target.value)
                             }
                             isInvalid={!!errors.username}
-                            
                           />
                           <Form.Control.Feedback type="invalid">
                             {errors.username}
@@ -125,24 +139,23 @@ function Login() {
                               }}
                               isInvalid={!!errors.password}
                             />
-                           
-                              <Button
-                                className="eye_btn"
-                                variant="outline-secondary"
-                                style={{
-                                  color: "black",
-                                  boxShadow: "none",
-                                  backgroundColor: "transparent",
-                                }}
-                                onClick={() => setShowPassword(!showPassword)}
-                              >
-                                {showPassword ? (
-                                  <i className="bi bi-eye-slash"></i>
-                                ) : (
-                                  <i className="bi bi-eye"></i>
-                                )}
-                              </Button>
-                          
+
+                            <Button
+                              className="eye_btn"
+                              variant="outline-secondary"
+                              style={{
+                                color: "black",
+                                boxShadow: "none",
+                                backgroundColor: "transparent",
+                              }}
+                              onClick={() => setShowPassword(!showPassword)}
+                            >
+                              {showPassword ? (
+                                <i className="bi bi-eye-slash"></i>
+                              ) : (
+                                <i className="bi bi-eye"></i>
+                              )}
+                            </Button>
 
                             <Form.Control.Feedback type="invalid">
                               {errors.password}
@@ -154,6 +167,7 @@ function Login() {
                           <Button
                             className="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
                             type="submit"
+                            onClick={handleSubmit}
                           >
                             Log in
                           </Button>
