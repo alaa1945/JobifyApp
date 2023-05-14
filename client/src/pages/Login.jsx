@@ -6,7 +6,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
-  const [result, setResult] = useState({});
+  //const [result, setResult] = useState({});
   const [showPassword, setShowPassword] = useState(false);
 
   const validate = () => {
@@ -181,7 +181,7 @@ function Login() {
 
                         <div className="login_link d-flex align-items-center justify-content-center pb-4">
                           <p className="mb-0 me-2">Don't have an account?</p>
-                          <Link className="class_Link" to="/signup">
+                          <Link className="class_Link" to="/newUser">
                             Sign Up
                           </Link>
                         </div>

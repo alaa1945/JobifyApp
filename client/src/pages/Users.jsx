@@ -12,13 +12,10 @@ function Users() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (accountType === "freelancer") {
-      // Redirect the user to the freelancer signup page
       window.location.href = "/signup/freelancer";
     } else if (accountType === "client") {
-      // Redirect the user to the client signup page
       window.location.href = "/signup/client";
     } else {
-      // Display an error message if the user hasn't selected an account type
       alert("Please select an account type.");
     }
   };

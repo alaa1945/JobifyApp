@@ -10,8 +10,11 @@ function Signup() {
   const [country, setCountry] = useState("");
   const [termsAgreed, setTermsAgreed] = useState(false);
   const [errors, setErrors] = useState({});
+  const [activeUrl, setActiveUrl] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+
   useEffect(() => {
+    setActiveUrl(window.location.href);
     fetch("https://restcountries.com/v2/all")
       .then((response) => response.json())
       .then((data) => {
@@ -49,15 +52,37 @@ function Signup() {
     return errors;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    console.log(activeUrl);
     event.preventDefault();
     const errors = validate();
-
     if (Object.keys(errors).length === 0) {
-      // submit form data to server
+      try {
+        const response = await fetch(activeUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            country: country,
+            password: password,
+          }),
+          
+        });
+        const data = await response.json();
+       
+        return data;
+       
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       setErrors(errors);
     }
+    
   };
 
   return (
@@ -184,24 +209,23 @@ function Signup() {
                               }}
                               isInvalid={!!errors.password}
                             />
-                           
-                              <Button
-                                className="eye_btn"
-                                variant="outline-secondary"
-                                style={{
-                                  color: "black",
-                                  boxShadow: "none",
-                                  backgroundColor: "transparent",
-                                }}
-                                onClick={() => setShowPassword(!showPassword)}
-                              >
-                                {showPassword ? (
-                                  <i className="bi bi-eye-slash"></i>
-                                ) : (
-                                  <i className="bi bi-eye"></i>
-                                )}
-                              </Button>
-                            
+
+                            <Button
+                              className="eye_btn"
+                              variant="outline-secondary"
+                              style={{
+                                color: "black",
+                                boxShadow: "none",
+                                backgroundColor: "transparent",
+                              }}
+                              onClick={() => setShowPassword(!showPassword)}
+                            >
+                              {showPassword ? (
+                                <i className="bi bi-eye-slash"></i>
+                              ) : (
+                                <i className="bi bi-eye"></i>
+                              )}
+                            </Button>
 
                             <Form.Control.Feedback type="invalid">
                               {errors.password}

@@ -6,9 +6,11 @@ import "../assets/styles.css";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
-import {Routes, Route } from "react-router-dom";
+import Profile from "../pages/Profile";
+import Freelancer from "../pages/Freelancer";
+import { Routes, Route } from "react-router-dom";
 import Users from "../pages/Users";
-
+import JobDetails from "./JobDetails";
 function App() {
   // React.useEffect(() => {
   //   fetch("/")
@@ -33,16 +35,18 @@ function App() {
 
   return (
     <div>
-    
-     <Routes>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/newUser" element={<Users/>}/>
-        <Route path="/signup" element={<Signup/>} />
-        <Route path="/signup/client" element={<Signup/>} />
-        <Route path="/signup/freelancer" element={<Signup/>} />
+        <Route path="/newUser" element={<Users />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signup/client" element={<Signup />} />
+        <Route path="/signup/freelancer" element={<Signup />} />
+        <Route path="/freelancer" element={<Freelancer />} />
+        <Route path="/freelancer/profile" element={<Profile />} />
+        <Route path="/freelancer/job-details" element={<JobDetails />} />
       </Routes>
-     
+
       {/* <p>{!data ? "Loading..." : data}</p> */}
     </div>
   );
